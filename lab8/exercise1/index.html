@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>Exercise 1</title>
+    </head>
+    <body>
+        <p id='error' style='color: red;'></p>
+        <p>Input Password:</p>
+        <input id='box1' type='password' />
+        <p>Confirm:</p>
+        <input id='box2' type='password' /><br /><br />
+        <button onclick='validate()'>Enter</button>
+
+        <!--Just wrote my js here because its only like 2 functions-->
+        <script>
+            function validate() {
+                let box1 = document.querySelector('#box1').value
+                let box2 = document.querySelector('#box2').value
+                error = false
+                if (box1 !== box2) {
+                    document.querySelector('#error').innerText += "Error: passwords do not match!\n"
+                    error = true
+                }
+                if (box1.length < 8 || box2.length < 8) {
+                    document.querySelector('#error').innerText += "Error: passwords must be at least 8 characters long!\n"
+                    error = true
+                }
+                if (!error) {
+                    document.querySelector('#error').style.color = 'green'
+                    document.querySelector('#error').innerText = 'Success!'
+                }
+            }
+
+            function reset() {
+                document.querySelector('#error').style.color = 'red'
+                document.querySelector('#error').innerText = ""
+            }
+
+            document.querySelector('#box1').addEventListener('keydown', reset)
+            document.querySelector('#box2').addEventListener('keydown', reset)
+        </script>
+    </body>
+</html>

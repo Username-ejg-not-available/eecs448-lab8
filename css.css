@@ -1,0 +1,99 @@
+h1 {
+    font-family: "Times new roman", times, "trebuchet ms", serif;
+    font-size: 2em;
+    text-align: center;
+}
+body {
+    overflow: auto;
+    margin: 0 8px;
+}
+img {
+    vertical-align: bottom;
+}
+#box {
+    border-style: ridge groove groove ridge;
+    border-width: .99em;
+    border-color: rgb(212,22,10);
+    width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+#contact {
+    text-align: center;
+    background-color: rgb(255,231,55);
+    padding: .5em 0em;
+    margin: 0;
+    width: 50em;
+    position: relative;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+}
+#content {
+    padding: 0em 1em;
+    min-height: 20em;
+    font-family: arial, "comic sans ms", calibri, sans-serif;
+}
+#content p {
+    margin: 0;
+}
+li a {
+    text-decoration: none;
+    color: #505050;
+}
+li a:hover {
+    color: black;
+}
+#menuimg {
+    width: 800px;
+    padding: 0 0 1em 0;
+}
+.bigname {
+    font-family: "Times new roman", times, "trebuchet ms", serif;
+    font-size: 1.5em;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Dropdown Menu*/
+.dropdown-button {
+    background-color: rgb(255,231,55);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50em;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+    border-style: solid none none none;
+    border-color: rgb(128,13,6);
+    border-width: .35em;
+}
+.navigation {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 50em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+.dropdown-content a:hover {
+    background-color: #efefef
+}
+.navigation:hover .dropdown-content {
+    display: block;
+}
+.navigation:hover .dropdown-button {
+    background-color: rgb(230,201,0);
+}

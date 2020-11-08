@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>Exercise 4</title>
+        <!--Not worth a whole document for 11 lines-->
+        <style>
+            #toplevel {
+                display: flex;
+            }
+            #inputs {
+                border: 1px solid gray;
+                text-align: center;
+                padding: 5px;
+            }
+            #text {
+                padding: 5px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id='toplevel'>
+            <div id='text'>
+                <p>The <b>D</b>ocument <b>O</b>bject <b>M</b>odel, or DOM, that defines the structure 
+                of an HTML document has inside of it a style object. To access the style object,
+                you simple need to access the tag, via its id, like in previous exercises. You can
+                then access the style object of that tag.</p>
+            </div>
+            <div id='inputs'>
+                <h5>Border (0-255):</h5>
+                <input id='r1' type='number' min='0' max='255' placeholder='red' />
+                <input id='g1' type='number' min='0' max='255' placeholder='green' />
+                <input id='b1' type='number' min='0' max='255' placeholder='blue' />
+                <input id='w1' type='number' min='0' placeholder='width' />
+                <h5>Background color (0-255):</h5>
+                <input id='r2' type='number' min='0' max='255' placeholder='red' />
+                <input id='g2' type='number' min='0' max='255' placeholder='green' />
+                <input id='b2' type='number' min='0' max='255' placeholder='blue' />
+                <input id='w2' type='number' min='0' placeholder='width' /><br />
+                <button onclick='execute()'>Enter</button>
+            </div>
+        </div>
+
+        <script>
+            function execute() {
+                let values = []
+                let letters = ['r','g','b','w']
+                for (let i = 1; i < 3; i++) {
+                    for (const l of letters) {
+                        values.push(document.querySelector(`#${l}${i}`).value)
+                    }
+                }
+                let text = document.querySelector('#text')
+                text.style.border = `${values[3]}px solid rgb(${values[0]},${values[1]},${values[2]})`
+                text.style.backgroundColor = `rgb(${values[4]},${values[5]},${values[6]})`
+                text.style.width = `${values[7]}px`
+            }
+        </script>
+    </body>
+</html>
